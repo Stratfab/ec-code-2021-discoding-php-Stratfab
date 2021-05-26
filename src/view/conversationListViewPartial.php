@@ -12,17 +12,17 @@
         <? foreach ($conversations as $conv): ?>
             <li class="list-group-item border-0">
 
-                <a href="/index.php?action=conversation&sub_action=detail&conversation_id=<?= $conv['id']; ?>"
+                <a href="/index.php?action=conversation&sub_action=detail&conversation_id=<?= isset ($conv['id']); ?>"
                    class="list-group-item list-group-item-action border-0">
                     <?php
-                    if ($conv['interlocutor_avatar_url']) {
+                    if (isset($conv['interlocutor_avatar_url'])){
                         $avatarUrl = $conv['interlocutor_avatar_url'];
                     } else {
                         $avatarUrl = "/static/lib/bootstrap-icons-1.5.0/person-fill.svg";
                     }
                     ?>
                     <img src="<?= $avatarUrl ?>" class="rounded-circle avatar-small mx-2"/>
-                    <?= $conv['interlocutor_username']; ?>
+                    <?= isset ($conv['interlocutor_username']); ?>
                 </a>
             </li>
         <? endforeach; ?>

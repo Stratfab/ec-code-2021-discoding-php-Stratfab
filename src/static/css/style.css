@@ -33,3 +33,22 @@ html, body {
     height: 40px;
     object-fit: cover;
 }
+
+.loginButton{
+    margin-top: 30px;
+
+}
+.signupButton{
+    margin-top: 50px;
+}
+
+.contactButton{
+    
+    margin-top: 60px;
+    width: 10px;
+    
+}
+
+.logoutButton{
+    margin-left: 10px;
+}

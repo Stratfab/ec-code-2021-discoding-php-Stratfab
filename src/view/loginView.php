@@ -19,10 +19,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block w-100">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block w-100 loginButton" >Login</button>
+                    <a href="index.php?action=signup" type="submit" class="btn btn-primary btn-lg btn-block w-100 signupButton">Create an account</a>
+                    
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-danger btn-lg btn-block w-50 contactButton">Contact us</button>
                 </div>
             </form>
         </div>
+        
     </div>
 </div>
 

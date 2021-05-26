@@ -2,9 +2,13 @@
 
 date_default_timezone_set('Europe/Paris');
 
-require_once('controller/conversationController.php');
-require_once('controller/friendController.php');
-require_once('controller/loginController.php');
+// on importe tous les controllers
+$controllers = scandir('controller');
+unset($controllers[0]);
+unset($controllers[1]);
+foreach($controllers as $controller){
+  require_once( 'controller/'.$controller);
+}
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
@@ -19,6 +23,13 @@ if (isset($_GET['action'])) {
         case 'logout':
             logout();
             break;
+
+        case 'signup':
+               
+                if ( !empty( $_POST ) ) signup( $_POST );
+                  else signupPage();
+          
+              break;
 
         case 'conversation':
             conversationPage();
