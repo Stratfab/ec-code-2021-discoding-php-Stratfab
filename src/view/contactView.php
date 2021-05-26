@@ -29,7 +29,10 @@
             </span>
             
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-danger btn-lg btn-block w-50 sendButton">Send</button>
+                    <button  type="submit" class="btn btn-danger btn-lg btn-block w-100 sendButton">Send</button> 
+                </div>
+                <div class="d-flex justify-content-center">
+                <a href="index.php?action=login" type="submit"  class="btn btn-primary btn-lg btn-block w-100 loginButton" >Login</a>
                 </div>
                 
             </form>

@@ -27,6 +27,7 @@ function contact(){
     else{
         $success_msg = "The email has been sent";
         $_POST['success_msg'] = $success_msg;
+        
 
     }
     
@@ -44,6 +45,6 @@ function contact(){
 
     $_POST['error_msg'] = $error_msg;}
     require('view/contactView.php');
-}  
     
+}  
 ?>

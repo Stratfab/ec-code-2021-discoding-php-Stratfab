@@ -18,7 +18,8 @@
                 </div>
 
                 <div class="mb-3">
-                <button type="submit" class="btn btn-primary btn-lg btn-block w-100 loginButton" >Login</button>
+                    
+                <button type="submit"  class="btn btn-primary btn-lg btn-block w-100 loginButton" >Login</button>
                     <a href="index.php?action=signup" type="submit" class=" btn btn-secondary btn-lg btn-block w-100 signupButton">Create an account</a>
                     
                 </div>
