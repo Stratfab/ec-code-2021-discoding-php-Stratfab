@@ -2,14 +2,13 @@
 
 <div class="container-fluid d-flex h-100 characterBackground">
     <div class="row align-self-center w-100">
-        <div class="col-4 mx-auto auth-container">
+        <div class="col-md-4 mx-auto auth-container">
             <h3>Hello Friend!
             </h3>
-            <p class="text-muted">We would be happy to count you among our subscribers!</p>
+            <p class="text-muted">Register quickly !</p>
             <form action="" method="post">
                 <div class="mb-3">
-                    <label for="email" class="form-label text-muted small text-uppercase">Email or Phone
-                        number</label>
+                    <label for="email" class="form-label text-muted small text-uppercase">Email</label>
                     <input type="email" class="form-control" id="email" name="email"/>
                 </div>
 

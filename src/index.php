@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+
 
 date_default_timezone_set('Europe/Paris');
 
@@ -30,6 +33,10 @@ if (isset($_GET['action'])) {
                   else signupPage();
           
               break;
+
+        case 'contact':
+				contact();
+				break;
 
         case 'conversation':
             conversationPage();
