@@ -26,6 +26,12 @@
                     <label for="password_confirm" class="form-label text-muted small text-uppercase">Confirm Password</label>
                     <input type="password" class="form-control" id="password_confirm" name="password_confirm"/>
                 </div>
+                    <span class="error-msg text-danger" id="result">
+                    <?= isset( $error_msg ) ? $error_msg : ''; ?>
+                    </span>
+                    <span class="success-msg text-success">
+                    <?= isset($success_msg) ? $success_msg : null; ?>
+                    </span>
 
                 <div class="mb-3">
                     <button  id="submit" type="submit" class="btn btn-danger btn-lg btn-block w-100 loginButton">Validate</button>
@@ -36,9 +42,6 @@
                     <a href="index.php?action=login" type="submit" class="btn btn-primary btn-lg btn-block w-100 loginButton">Login</a>
                     
                 </div>
-                <span class="error-msg" id="result">
-              <?= isset( $error_msg ) ? $error_msg : ''; ?>
-            </span>
             </form>
             
         </div>

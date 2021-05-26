@@ -23,24 +23,33 @@ function signupPage() {
 * ----- SIGNUP FUNCTION -----
 ***************************/
 function signup( $post ) {
-  $data                   = new stdClass();
-  $data->email           = $post['email'];
-  $data->username        = $post ['username'];
-  $data->password         = hash('sha256', ($_POST['password']));
+    $email = $_POST['email'];
+    $username =  $_POST['username'];
+    $password =  $_POST['password'];
+    $password_confirm = $_POST['password_confirm'];
+
+      if ($password == $password_confirm)
+      {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) 
+        {
+          $newUser = new User();
+          $newUser->setEmail( $email );
+          $newUser->setUsername( $username);
+          $newUser->setPassword(hash('sha256',$password));
+          $newUser->createUser();
+          $success_msg = "Your account was created";
+        
+        }else{
+            $error_msg = 'You must complete all the fields';
+        }
+      }
+      else 
+      {
+        $error_msg = 'Passwords are not matching ';
+      }
   
+  
+      require('view/signupView.php');
 
-  # Check if passwords are matching
-  try {
-      $user               = new User( $data );
-      $user->createUser();
+}
 
-      # Todo add a popup to signal the creation of the user
-      # Todo mailing to confirm the account
-      header( 'location: index.php ');
-  }
-  catch (Exception $e) {
-      $error_msg = $e->getMessage();
-  }
-
-  require('view/signupView.php');
-} 
