@@ -30,7 +30,7 @@ function signup( $post ) {
 
       if ($password == $password_confirm)
       {
-        if (!empty($_POST['email']) && !empty($_POST['password'])) 
+        if (!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) 
         {
           $newUser = new User();
           $newUser->setEmail( $email );
