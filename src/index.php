@@ -43,12 +43,17 @@ if (isset($_GET['action'])) {
                     break;
 
         case 'conversation':
-            conversationPage();
+             conversationPage();
+
+            if ( !empty( $_POST ) ) {messageDelete( $_POST );}
+            //var_dump($_POST);
             break;
 
         case 'friend':
             friendPage();
             break;
+
+        
     }
 } else {
     $user_id = $_SESSION['user_id'] ?? false;

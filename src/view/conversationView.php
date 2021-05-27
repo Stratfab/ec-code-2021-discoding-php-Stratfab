@@ -30,7 +30,14 @@
                             ?>
                             <img src="<?= $avatarUrl ?>" class="rounded-circle avatar mx-2"/>
                         </div>
+                        <!-- messages dend by loged user -->
+                        <?php if   ($message['user_id'] == $user_id) : ?>
                         <div class="card-body">
+                            <div class="d-flex justify-content-end">
+                            <form method="POST" action="">
+                        <button type="submit" name="delete"  style="background:none; border:none; outline: none; color:white; "class="close bi bi-x-square" aria-label="Close"></button>  
+                            </form>
+                            </div>
                             <div class="card-title d-flex">
                                 <div class="flex-grow-1 fw-bold">
                                     <?= $msgUser['username'] ?>
@@ -43,6 +50,21 @@
                                 <?= $message['content'] ?>
                             </div>
                         </div>
+                        <?php else:  ?>
+                            <div class="card-body">
+                            <div class="card-title d-flex">
+                                <div class="flex-grow-1 fw-bold">
+                                    <?= $msgUser['username'] ?>
+                                </div>
+                                <div class="text-muted fs-6">
+                                    <?= $message['created_at'] ?>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <?= $message['content'] ?>
+                            </div>
+                        </div>
+                        <?php endif ?>
                     </div>
                 <?php endforeach; ?>
 

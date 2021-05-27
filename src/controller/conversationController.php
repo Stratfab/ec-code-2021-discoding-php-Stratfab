@@ -74,3 +74,24 @@ function addMessage($user_id)
 
     header('Location: /index.php?action=conversation&sub_action=detail&conversation_id=' . $conversation_id);
 }
+
+function messageDelete($post){
+
+    $delete=$post['delete'] ?? '';
+    $user_id = $_SESSION['user_id'] ?? false;
+    //var_dump($user_id);
+    $conversation_id=isset($_GET['conversation_id']) ? $_GET['conversation_id'] : '';
+    //var_dump($conversation_id);
+    $conversation = Conversation::getConversationForUser($conversation_id, $user_id);
+    //var_dump($conversation);
+    $user2_id = $conversation['interlocutor_id'];
+    //var_dump($user2_id);
+
+    Message::deleteMessage($user_id,$user2_id,$conversation_id);
+  
+    
+    
+    
+
+}
+

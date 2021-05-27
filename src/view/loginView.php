@@ -24,7 +24,7 @@
                     
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a href="index.php?action=contact" type="submit" class="btn btn-danger btn-lg btn-block w-50 contactButton">Contact us</a>
+                    <a href="index.php?action=contact" type="submit" class="btn btn-outline-light btn-lg btn-block w-50 contactButton">Contact us</a>
                 </div>
             </form>
         </div>
