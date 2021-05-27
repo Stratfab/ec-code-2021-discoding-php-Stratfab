@@ -6,6 +6,8 @@
         <?= $conversation_list_partial ?>
 
         <div class="col-sm-6 col-md-9 mt-2">
+
+          <div class="messageScroll">
             <div class="row m-auto">
                 <h3><?= $interlocutor['username'] ?></h3>
 
@@ -69,8 +71,9 @@
                         <?php endif ?>
                     </div>
                 <?php endforeach; ?>
-
             </div>
+            </div>
+            
             <form class="d-flex mt-3" action="/index.php?action=conversation&sub_action=add_message&conversation_id=<?= $conversation_id ?>" method="post">
                 <div class="flex-grow-1">
                     <input type="text" class="form-control" id="content" name="content"/>

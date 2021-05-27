@@ -11,6 +11,7 @@
             </a>
         </li>
     </ul>
+    <div class="conversationScroll">
     <ul class="list-group border-0">
         <?php foreach ($conversations as $conv): ?>
             <li class="list-group-item border-0">
@@ -30,5 +31,6 @@
             </li>
         <?php endforeach; ?>
     </ul>
+    </div>
 </div>
 <?php $conversation_list_content = ob_get_clean(); ?>

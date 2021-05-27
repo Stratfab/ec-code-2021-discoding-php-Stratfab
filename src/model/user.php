@@ -163,16 +163,15 @@ class User
         // Open database connection
         $db = init_db();
 
-        $req = $db->prepare("SELECT * FROM user WHERE username = ?");
-        $req->execute(array($username));
-        $row = $req->fetch();
-        if($row['username'] != $username){
-          return false;
-        }else{
-          return $row;
-        }
+        $req = $db->prepare("SELECT * FROM users WHERE username = ?");
+        $req->execute([$username]);
+
+        // Close database connection
         $db = null;
+
+        return $req->fetch();
     }
+
 
 
     public static function isAlreadyFriend($user_id, $friend_id)

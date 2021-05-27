@@ -71,3 +71,13 @@ html, body {
     outline: none; 
     color:white;
 }
+
+.messageScroll{
+    height: 800px;
+    overflow: auto;
+}
+
+.conversationScroll{
+    height: 300px;
+    overflow: auto;
+}

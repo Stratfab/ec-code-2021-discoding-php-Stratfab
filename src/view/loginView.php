@@ -16,7 +16,9 @@
                     <label for="password" class="form-label text-muted small text-uppercase">Password</label>
                     <input type="password" class="form-control" id="password" name="password"/>
                 </div>
-
+                <span class="error-msg text-danger" id="result">
+                    <?= isset( $error_msg ) ? $error_msg : ''; ?>
+                    </span>
                 <div class="mb-3">
                     
                 <button type="submit"  class="btn btn-primary btn-lg btn-block w-100 loginButton" >Login</button>
