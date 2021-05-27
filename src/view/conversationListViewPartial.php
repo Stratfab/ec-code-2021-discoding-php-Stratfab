@@ -1,6 +1,9 @@
 <?php ob_start(); ?>
 <div class="col-sm-6 col-md-3 friends-list">
-
+    <div>
+    <a href="/index.php?action=logout" class="btn btn-outline-danger btn-sm logoutButtonHome">Logout</a>
+    <a href="/index.php?action=contactHome" class="btn btn-outline-light btn-sm contactUsButtonHome">Contact</a>
+    </div>
     <ul class="list-group mt-3 mb-3">
         <li class="list-group-item">
             <a href="/index.php?action=friend">

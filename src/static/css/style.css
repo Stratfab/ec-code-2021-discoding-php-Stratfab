@@ -55,3 +55,12 @@ html, body {
 .sendButton{
     margin-top: 40px;
 }
+
+.logoutButtonHome{
+    margin-top: 25px;
+}
+
+.contactUsButtonHome{
+    margin-top: 25px;
+    margin-left: 10px;
+}

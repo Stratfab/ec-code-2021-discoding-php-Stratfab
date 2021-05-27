@@ -38,6 +38,10 @@ if (isset($_GET['action'])) {
 				contact();
 				break;
 
+        case 'contactHome':
+                    contactHome();
+                    break;
+
         case 'conversation':
             conversationPage();
             break;
