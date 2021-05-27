@@ -120,19 +120,12 @@ class Message
         return $message;
     }
 
-    public static function deleteMessage($user1_id,$user2_id,$conversation_id)
+    public static function deleteMessage($id)
     {
         $db = init_db();
-
-        $req = $db->prepare("DELETE FROM messages as m, conversations as c, WHERE m.user_id = c.user1_id and c.user1_id=? and c.user2_id=? and c.id=?");
-        $req->execute(array($user1_id,$user2_id,$conversation_id));
-
-        
-
-        // Close database connection
+        $req = $db->prepare("DELETE FROM messages WHERE id=?");
+        $req->execute(array($id));
         $db = null;
-
-        
     }
 
 }

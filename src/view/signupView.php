@@ -3,7 +3,7 @@
 <div class="container-fluid d-flex h-100 characterBackground">
     <div class="row align-self-center w-100">
         <div class="col-md-4 mx-auto auth-container">
-            <h3>Hello Friend!
+            <h3>Hi Friend !
             </h3>
             <p class="text-muted">Register quickly !</p>
             <form action="" method="post">
