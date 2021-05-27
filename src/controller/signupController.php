@@ -28,15 +28,20 @@ function signup( $post ) {
     $password =  $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
+    // verify if password and password_confirm are matching
       if ($password == $password_confirm)
       {
+
+        // verify if email, username and password are no empty
         if (!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) 
         {
+          // create a new user
           $newUser = new User();
           $newUser->setEmail( $email );
           $newUser->setUsername( $username);
           $newUser->setPassword(hash('sha256',$password));
           $newUser->createUser();
+          
           $success_msg = "Your account was created";
         
         }else{
