@@ -76,9 +76,13 @@ function addMessage($user_id)
     $message->setContent($content);
     Message::createMessage($message);
 
+    $date = date('Y-m-d H:i:s');
+    //update de la conversation
+    $conversation_id = $_GET['conversation_id'] ?? false;
+    Conversation::updateConversation($date, $conversation_id);
+
     header('Location: /index.php?action=conversation&sub_action=detail&conversation_id=' . $conversation_id);
 }
-
 function messageDelete($post){
     $conversation_id = $_GET['conversation_id'];
     $id_message = $post['id_message'] ?? '';

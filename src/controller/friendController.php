@@ -27,6 +27,7 @@ function addFriend($user_id)
     $message = '';
     $username = $_POST['username'] ?? '';
     if ($username != '') {
+        $message = 'Cet ami n\'existe pas !';
         // FIXME What happens if the user does not exist?
         $newFriend = User::findUserWithUsername($username);
         if (User::isAlreadyFriend($user_id, $newFriend['id'])) {

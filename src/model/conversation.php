@@ -174,5 +174,13 @@ class Conversation
 
         return $conversation_id;
     }
-
+    
+    public static function updateConversation($date, $id){
+        $db = init_db();
+        
+        $req = $db->prepare("UPDATE conversations 
+                             SET updated_at = ?
+                             WHERE id = ?");
+        $req->execute(array($date, $id));
+    }
 }
