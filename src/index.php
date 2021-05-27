@@ -49,6 +49,8 @@ if (isset($_GET['action'])) {
             //var_dump($_POST);
             break;
 
+       
+
         case 'friend':
             friendPage();
             break;

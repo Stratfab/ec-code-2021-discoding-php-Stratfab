@@ -9,8 +9,15 @@
             <a href="/index.php?action=friend">
                 <i class="bi-people-fill mx-2"></i>Friends
             </a>
+        <div class=" d-flex search">
+            <form class="form-inline ">
+                <button class="btn btn-outline-success btn-sm my-2 my-sm-0 " type="submit">Search</button>
+                <input class="col-md-4 form-control-search mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
         </li>
     </ul>
+    
     <div class="conversationScroll">
     <ul class="list-group border-0">
         <?php foreach ($conversations as $conv): ?>

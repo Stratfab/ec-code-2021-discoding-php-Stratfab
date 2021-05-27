@@ -26,6 +26,10 @@ function conversationPage()
         case 'add_message':
             addMessage($user_id);
             break;
+
+        case 'delete_message':
+            messageDelete($_POST);
+            break;
     }
 }
 
@@ -80,11 +84,7 @@ function messageDelete($post){
     $id_message = $post['id_message'] ?? '';
     Message::deleteMessage($id_message);
 
-    
-   
-    
-  
-    
+    header('Location: /index.php?action=conversation&sub_action=detail&conversation_id=' . $conversation_id);
     
     
 

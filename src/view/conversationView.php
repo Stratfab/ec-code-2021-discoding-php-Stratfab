@@ -48,7 +48,7 @@
                                 <?= $message['content'] ?>
                             </div>
                             <div class="d-flex justify-content-end">
-                            <form method="POST" action="">
+                            <form method="POST" action="/index.php?action=conversation&sub_action=delete_message&conversation_id=<?= $conversation_id ?>">
                             <input type="hidden" value="<?= isset($message['id']) ? $message['id'] : '' ?>" name="id_message"/>
                         <button type="submit" name="delete"  class="close bi bi-x-square" aria-label="Close"></button>  
                             </form>

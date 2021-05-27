@@ -81,3 +81,14 @@ html, body {
     height: 300px;
     overflow: auto;
 }
+
+.form-control-search{
+    width: 15em;
+
+}
+
+
+
+.search{
+    margin-top: 20px;
+}
