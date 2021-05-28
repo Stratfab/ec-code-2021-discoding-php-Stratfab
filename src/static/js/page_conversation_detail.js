@@ -7,7 +7,7 @@ contentInput.addEventListener("keyup", function (event) {
   }
 });
 
-// script for refresh the div for the conversationView
+// jQuery script for refresh the div for the conversationView
 
 $(document).ready(function () {
   setInterval(function () {

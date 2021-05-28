@@ -9,19 +9,41 @@
                 <div class="col-10">
                     <h2><i class="bi-people-fill mx-2"></i>Friends</h2>
                     <span class=" justify-content-center search">
-            <form class="form-inline ">
-                <button class="btn btn-outline-success btn-sm my-2 my-sm-0 " type="submit">Search</button>
-                <input class="col-md-4 form-control-search mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline" method="get" action="/index.php?action=friend" >  
+                <button  class="btn btn-outline-success btn-sm my-2 my-sm-0 " type="submit">Search</button>
+                <input class="col-md-4 form-control-search mr-sm-2" type="search" id="search" name="username" placeholder="Search" aria-label="Search">
             </form>
             </span>
-
                 </div>
                 <div class="col-2 align-self-center d-flex justify-content-end ">
                     <a href="/index.php?action=friend&sub_action=add_friend" class="btn btn-success ">Add a Friend</a>
-                   
-                   
                 </div>
             </div>
+
+            <!-- search users with search bar -->
+            <?php if(!empty($_GET['username'])):?>
+                    <?php foreach ($users as $user): ?>
+                        <li class="d-flex justify-content-between list-group-item ">
+                            <div>
+                                <?php
+                                    if ($user['avatar_url']) {
+                                        $avatarUrl = $user['avatar_url'];
+                                    } else {
+                                        $avatarUrl = "/static/lib/bootstrap-icons-1.5.0/person-fill.svg";
+                                    }
+                                ?>
+                                <img src="<?= $avatarUrl ?>" class="rounded-circle avatar-small mx-2"/>
+                                <?= $user['username']; ?>
+                            </div>
+
+                            <div class="align-self-center">
+                                    <a href="/index.php?action=conversation&sub_action=start_with_user&interlocutor_id=<?= $user['id'] ?>">Message</a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+
+            <!-- friends in friendView  -->
             <ul class="list-group list-group-flush mt-2">
                 <?php foreach ($friends as $friend): ?>
                     <li class="d-flex justify-content-between list-group-item">
@@ -44,7 +66,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-
+        <?php endif ?>
     </div>
     
 </div>

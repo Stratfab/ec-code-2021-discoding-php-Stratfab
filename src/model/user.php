@@ -241,5 +241,34 @@ class User
     $db = null;
 
   }
+ /********************************************************
+  * -------- FILTER USERS FOR FRIENDS SEARCH BAR --------- *
+  ********************************************************/
+  public static function filterUsers($username = null) : array
+  {
+      // Open database connection
+      $db = init_db();
+      $sql = "SELECT * FROM users WHERE ";
+
+      $fields = [];
+
+      if ($username != null) {
+          array_push($fields, "username LIKE '%" . $username . "%'");
+      }
+
+      if (sizeof($fields) > 0) {
+          $sql .= join(" AND ", $fields);
+      }
+      else {
+          $sql .= "1";
+      }
+      $sql .= " ORDER BY username DESC";
+
+      $req = $db->prepare($sql);
+      $req->execute();
+      // Close database connection
+      $db = null;
+      return $req->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
 

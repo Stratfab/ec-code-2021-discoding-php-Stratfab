@@ -9,15 +9,24 @@
 
         <div class="col-sm-6 col-md-9 mt-2">
         
-            <!-- div for scroll message  -->
-          <div class="messageScroll">
-
-          <!-- refresh div with jquery  with id="reload"-->
-          <div id="reload">
-          
-            <div class="row m-auto" >
             
+            <div class="row m-auto" >
+                
                 <h3><?= $interlocutor['username'] ?></h3>
+                
+                <div class=" d-flex search">
+            <form class="form-inline ">
+                <button class="btn btn-outline-success btn-sm my-2 my-sm-0 " type="submit">Search</button>
+                <input class="col-md-4 form-control-search mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            </div>
+
+                <!-- div for scroll message  -->
+              <div class="messageScroll">
+    
+              <!-- refresh div with jquery  with id="reload"-->
+              <div id="reload">
+
 
                 <?php foreach ($messages
 
