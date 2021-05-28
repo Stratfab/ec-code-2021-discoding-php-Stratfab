@@ -26,22 +26,29 @@ function addFriend($user_id)
 {
     $message = '';
     $username = $_POST['username'] ?? '';
-    if ($username != '') {
-        $message = 'Cet ami n\'existe pas !';
+    if (!empty($username)) :
         // FIXME What happens if the user does not exist?
-        $newFriend = User::findUserWithUsername($username);
-        if (User::isAlreadyFriend($user_id, $newFriend['id'])) {
-            $message = 'Déjà ami avec ' . $newFriend['username'] . ' !';
-        } else {
-            User::addFriend($user_id, $newFriend['id']);
-            $message = 'Ami ' . $newFriend['username'] . ' ajouté !';
-        }
-    }
+            $newFriend = User::findUserWithUsername($username);
+        
+            if($newFriend != false):
+        
+                if (User::isAlreadyFriend($user_id, $newFriend['id'])) :
+                    $message = 'Already friend with ' . $newFriend['username'] . ' !';
+                else :
+                    User::addFriend($user_id, $newFriend['id']);
+                    $message = 'Friend ' . $newFriend['username'] . 'added !';
+                endif;
+            else:
+                $message = 'friend not found !';
+            endif;
+    endif;
+    
+ 
+     
 
     $conversation_list_partial = conversationListPartial($user_id);
     require('view/friendAddView.php');
 }
-
 function displayFriends($user_id)
 {
     $user_data = User::getUserById($user_id);

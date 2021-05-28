@@ -164,13 +164,13 @@ class User
         $db = init_db();
 
         $req = $db->prepare("SELECT * FROM users WHERE username = ?");
-        $req->execute([$username]);
-
-        // Close database connection
+        $req->execute(array($username));
+        
         $db = null;
 
         return $req->fetch();
     }
+
 
 
 
