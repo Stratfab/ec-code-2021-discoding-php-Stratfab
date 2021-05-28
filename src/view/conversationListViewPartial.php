@@ -12,7 +12,8 @@
         
         </li>
     </ul>
-    
+
+    <!-- scroll for conversation -->
     <div class="conversationScroll">
     <ul class="list-group border-0">
         <?php foreach ($conversations as $conv): ?>

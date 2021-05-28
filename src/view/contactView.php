@@ -1,3 +1,6 @@
+<!-- contact form when you are on the login page -->
+
+
 <?php ob_start(); ?>
 
 <div class="container-fluid d-flex h-100 characterBackground">

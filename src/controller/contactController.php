@@ -1,6 +1,7 @@
 <?php 
 
 //function not sending mail because no mail server aren't configurated
+// function for contact us in login page
 function contact(){
 
     if(!empty($_POST)){
@@ -49,6 +50,8 @@ function contact(){
     
     
 }  
+
+// function for contact us on dashboard when user is login 
 function contactHome(){
 
     if(!empty($_POST)){

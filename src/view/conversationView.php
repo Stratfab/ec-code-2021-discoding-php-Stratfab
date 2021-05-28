@@ -9,9 +9,10 @@
 
         <div class="col-sm-6 col-md-9 mt-2">
         
-       
+            <!-- div for scroll message  -->
           <div class="messageScroll">
-          
+
+          <!-- refresh div with jquery  with id="reload"-->
           <div id="reload">
           
             <div class="row m-auto" >
@@ -40,6 +41,7 @@
                             ?>
                             <img src="<?= $avatarUrl ?>" class="rounded-circle avatar mx-2"/>
                         </div>
+
                         <!-- messages send by loged user -->
                         <?php if   ($message['user_id'] == $user_id) : ?>
                         <div class="card-body">
@@ -62,6 +64,8 @@
                             </form>
                             </div>
                         </div>
+
+                        <!-- message send by interlocutors -->
                         <?php else:  ?>
                             <div class="card-body">
                             <div class="card-title d-flex">

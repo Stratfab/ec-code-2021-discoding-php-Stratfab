@@ -8,6 +8,13 @@
             <div class="row">
                 <div class="col-10">
                     <h2><i class="bi-people-fill mx-2"></i>Friends</h2>
+                    <span class=" justify-content-center search">
+            <form class="form-inline ">
+                <button class="btn btn-outline-success btn-sm my-2 my-sm-0 " type="submit">Search</button>
+                <input class="col-md-4 form-control-search mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            </span>
+
                 </div>
                 <div class="col-2 align-self-center d-flex justify-content-end ">
                     <a href="/index.php?action=friend&sub_action=add_friend" class="btn btn-success ">Add a Friend</a>

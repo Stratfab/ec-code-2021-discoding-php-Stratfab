@@ -119,7 +119,8 @@ class Message
 
         return $message;
     }
-
+    
+        // fonction for delete message
     public static function deleteMessage($id)
     {
         $db = init_db();
