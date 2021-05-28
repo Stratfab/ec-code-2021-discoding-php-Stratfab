@@ -1,14 +1,19 @@
 <?php ob_start(); ?>
 
+
+
 <div class="container-fluid">
     <div class="row">
 
         <?= $conversation_list_partial ?>
 
         <div class="col-sm-6 col-md-9 mt-2">
-
+        <div id="reload">
+       
           <div class="messageScroll">
-            <div class="row m-auto">
+          
+            <div class="row m-auto" >
+            
                 <h3><?= $interlocutor['username'] ?></h3>
 
                 <?php foreach ($messages
@@ -22,6 +27,7 @@
                     ?>
 
                     <div class="card flex-row flex-wrap">
+                  
                         <div class="card-header" style="background-color: inherit;">
                             <?php
                             if ($msgUser['avatar_url']) {
@@ -82,13 +88,15 @@
                     <button id="sendMessage" type="submit" class="btn btn-secondary">Envoyer</button>
                 </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
 
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/static/js/page_conversation_detail.js"></script>
+
 
 <?php $content = ob_get_clean(); ?>
 <?php require('base.php'); ?>
