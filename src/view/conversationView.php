@@ -8,9 +8,11 @@
         <?= $conversation_list_partial ?>
 
         <div class="col-sm-6 col-md-9 mt-2">
-        <div id="reload">
+        
        
           <div class="messageScroll">
+          
+          <div id="reload">
           
             <div class="row m-auto" >
             
@@ -79,6 +81,8 @@
                 <?php endforeach; ?>
             </div>
             </div>
+            </div>
+           
             
             <form class="d-flex mt-3" action="/index.php?action=conversation&sub_action=add_message&conversation_id=<?= $conversation_id ?>" method="post">
                 <div class="flex-grow-1">
@@ -88,7 +92,7 @@
                     <button id="sendMessage" type="submit" class="btn btn-secondary">Envoyer</button>
                 </div>
             </form>
-            </div>
+            
         </div>
     </div>
 </div>
